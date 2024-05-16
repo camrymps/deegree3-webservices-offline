@@ -1,0 +1,29 @@
+# This file is available under the following license:
+# under LGPL 2.1 (LICENSE.TXT) Copyright 2023 Torsten Friebe <tfr@users.sourceforge.net>
+FROM tomcat:9-jdk11
+
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VCS_URL
+LABEL maintainer="deegree TMC <tmc@deegree.org>" \
+  org.opencontainers.image.created=$BUILD_DATE \
+  org.opencontainers.image.source=$VCS_URL \
+  org.opencontainers.image.revision=$VCS_REF
+
+# set deegree version
+ARG DEEGREE_VERSION=3.5.7
+ENV DEEGREE_WORKSPACE_ROOT=/root/.deegree
+ENV CATALINA_OPTS="-Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl -Dlog.dir=$CATALINA_HOME/logs"
+ENV LANG en_US.UTF-8
+
+# move deegree webservices WAR file and GML jar file to appropriate directory on container
+COPY exec/deegree-webservices-3.5.7.war /usr/local/tomcat/webapps/deegree-webservices.war
+COPY exec/deegree-tools-gml-3.5.7.jar /opt/deegree-tools-gml.jar
+
+# move XSDs to folder on container
+COPY xsd/ /usr/local/tomcat/webapps/deegree-webservices-xsd/
+
+# run tomcat
+CMD ["catalina.sh", "run"]
+
+EXPOSE 8080
