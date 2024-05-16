@@ -2,8 +2,6 @@
 
 "Offline" version of [deegree3-docker](https://hub.docker.com/r/deegree/deegree3-docker/). Includes WAR file and all XSD files.
 
-[![Docker Image CI](https://github.com/deegree/deegree3-docker/actions/workflows/docker-image.yaml/badge.svg)](https://github.com/deegree/deegree3-docker/actions/workflows/docker-image.yaml)
-
 # Supported tags and respective `Dockerfile` links
 
 - deegree 3.5.x (JDK 11/Tomcat 9): `3.5.7`, `3.5`, `latest` - [Dockerfile](https://github.com/camrymps/deegree3-webservices-offline/blob/master/3.5/Dockerfile)
@@ -17,8 +15,6 @@ configure and use deegree webservices. The [Docker web site](https://www.docker.
 about Docker.
 
 ## Docker images on Docker hub
-
-[![deegree3-webservices-offline](http://dockeri.co/image/deegree/deegree3-webservices-offline)](https://hub.docker.com/r/deegree/deegree3-webservices-offline/)
 
 https://hub.docker.com/r/deegree/deegree3-webservices-offline/
 
