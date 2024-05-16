@@ -1,6 +1,6 @@
 # Deegree3 Webservices Offline
 
-"Offline" version of [deegree3-docker](https://hub.docker.com/r/deegree/deegree3-docker/). Includes WAR file and all XSD files.
+"Offline" version of [deegree3-docker](https://hub.docker.com/r/camrymps/deegree3-docker/). Includes WAR file and all XSD files.
 
 # Supported tags and respective `Dockerfile` links
 
@@ -16,20 +16,20 @@ about Docker.
 
 ## Docker images on Docker hub
 
-https://hub.docker.com/r/deegree/deegree3-webservices-offline/
+https://hub.docker.com/r/camrymps/deegree3-webservices-offline/
 
 ## How to use it
 
 Use the following command to pull the latest image:
 
 ```
-docker pull deegree/deegree3-webservices-offline:latest
+docker pull camrymps/deegree3-webservices-offline:latest
 ```
 
 To start a docker container with the name `deegree` on port 8080 run the following command:
 
 ```
-docker run -d --name deegree -p 8080:8080 deegree/deegree3-webservices-offline:latest
+docker run -d --name deegree -p 8080:8080 camrymps/deegree3-webservices-offline:latest
 ```
 Running the image with `-d` runs the container in detached mode, leaving the container running in the background.
 The `--name` flag is setting the name for the container. The `-p` flag redirects a public port to a private port inside the container.
