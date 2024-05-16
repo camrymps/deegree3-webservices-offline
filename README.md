@@ -1,11 +1,12 @@
+# Deegree3 Webservices Offline
+
+"Offline" version of [deegree3-docker](https://hub.docker.com/r/deegree/deegree3-docker/). Includes WAR file and all XSD files.
+
 [![Docker Image CI](https://github.com/deegree/deegree3-docker/actions/workflows/docker-image.yaml/badge.svg)](https://github.com/deegree/deegree3-docker/actions/workflows/docker-image.yaml)
 
 # Supported tags and respective `Dockerfile` links
 
-- deegree 3.6.x (JDK 17/Tomcat 10.1): `3.6.0`, `3.6` - [Dockerfile](https://github.com/deegree/deegree3-docker/blob/main/3.6/Dockerfile)
-- deegree 3.5.x (JDK 11/Tomcat 9): `3.5.7`, `3.5`, `latest` (deprecated tags: `3.5.6`, `3.5.5`, `3.5.4`, `3.5.3`, `3.5.2`, `3.5.1`, `3.5.0`) - [Dockerfile](https://github.com/deegree/deegree3-docker/blob/main/3.5/Dockerfile)
-- deegree 3.4.x (JDK 8/Tomcat 8.5): `v3.4.35`, `v3.4`, `3.4` (deprecated tags: `v3.4.34`, `v3.4.33`, `v3.4.32`, `v3.4.31`, `v3.4.29`, `v3.4.28`, `v3.4.26`, `v3.4.25`, `v3.4.24`, `v3.4.23`, `v3.4.22`, `v3.4.20`, `v3.4.19`, `v3.4.18`, `v3.4.17`, `v3.4.16`, `v3.4.15`, `v3.4.14`, `v3.4.13`, `v3.4.12`, `v3.4.10`, `v3.4.9`, `v3.4.8`, `v3.4.7`, `v3.4.6`, `v3.4.5`, `v3.4.4`, `v3.4.3`, `v3.4.2`, `v3.4.1`, `v3.4.0`) - [Dockerfile](https://github.com/deegree/deegree3-docker/blob/main/3.4/Dockerfile)
-
+- deegree 3.5.x (JDK 11/Tomcat 9): `3.5.7`, `3.5`, `latest` - [Dockerfile](https://github.com/camrymps/deegree3-webservices-offline/blob/master/3.5/Dockerfile)
 # Quick reference
 
 ## deegree web services on Docker
@@ -17,22 +18,22 @@ about Docker.
 
 ## Docker images on Docker hub
 
-[![deegree-docker](http://dockeri.co/image/deegree/deegree3-docker)](https://hub.docker.com/r/deegree/deegree3-docker/)
+[![deegree3-webservices-offline](http://dockeri.co/image/deegree/deegree3-webservices-offline)](https://hub.docker.com/r/deegree/deegree3-webservices-offline/)
 
-https://hub.docker.com/r/deegree/deegree3-docker/
+https://hub.docker.com/r/deegree/deegree3-webservices-offline/
 
 ## How to use it
 
 Use the following command to pull the latest image:
 
 ```
-docker pull deegree/deegree3-docker:latest
+docker pull deegree/deegree3-webservices-offline:latest
 ```
 
 To start a docker container with the name `deegree` on port 8080 run the following command:
 
 ```
-docker run -d --name deegree -p 8080:8080 deegree/deegree3-docker:latest
+docker run -d --name deegree -p 8080:8080 deegree/deegree3-webservices-offline:latest
 ```
 Running the image with `-d` runs the container in detached mode, leaving the container running in the background.
 The `--name` flag is setting the name for the container. The `-p` flag redirects a public port to a private port inside the container.
@@ -43,6 +44,8 @@ To access the deegree webservices console start a browser of your choice and ope
 
 http://<container_ip>:8080/deegree-webservices/, the `<container_ip>` depends on the docker networking mode.
 http://localhost:8080/deegree-webservices/ should work with bridge mode.
+
+XSDs are hosted at [http://localhost:8080/deegree-webservices-xsd/](http://localhost:8080/deegree-webservices-xsd/).
 
 Continue with configuration of deegree as described in the [getting started guide](https://download.deegree.org/documentation/current/html/#anchor-lightly) of the deegree webservices handbook.
 
